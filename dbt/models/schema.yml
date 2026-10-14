@@ -104,3 +104,55 @@ models:
         description: "Timestamp of the first event in the session."
         data_tests:
           - not_null
+
+  - name: mart_acquisition_performance
+    description: "Marketing acquisition performance by first-user source, medium, and campaign."
+    columns:
+      - name: first_user_source
+        description: "Source that originally acquired the user."
+
+      - name: first_user_medium
+        description: "Medium associated with the user's first acquisition."
+
+      - name: first_user_campaign
+        description: "Campaign associated with the user's first acquisition."
+
+      - name: users
+        description: "Number of distinct users."
+        data_tests:
+          - not_null
+
+      - name: sessions
+        description: "Number of distinct sessions."
+        data_tests:
+          - not_null
+
+      - name: purchasing_sessions
+        description: "Number of sessions containing a purchase."
+        data_tests:
+          - not_null
+
+      - name: purchased_items
+        description: "Number of purchased items."
+        data_tests:
+          - not_null
+
+      - name: revenue
+        description: "Total item revenue associated with the acquisition group."
+        data_tests:
+          - not_null
+
+      - name: conversion_rate
+        description: "Purchasing sessions divided by total sessions."
+        data_tests:
+          - not_null
+
+      - name: revenue_per_user
+        description: "Revenue divided by distinct users."
+        data_tests:
+          - not_null
+
+      - name: revenue_per_session
+        description: "Revenue divided by distinct sessions."
+        data_tests:
+          - not_null
