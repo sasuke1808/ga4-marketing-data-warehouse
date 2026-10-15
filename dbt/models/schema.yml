@@ -156,3 +156,32 @@ models:
         description: "Revenue divided by distinct sessions."
         data_tests:
           - not_null
+
+  
+  - name: mart_marketing_daily
+    description: "Daily marketing performance. One row per session_date + source + medium, with funnel steps and revenue. Note: add_to_cart was not tracked 1-24 Nov 2020."
+    columns:
+      - name: session_date
+        description: "Date the session started."
+        data_tests:
+          - not_null
+
+      - name: source
+        description: "First-user source. '(not set)' when missing."
+        data_tests:
+          - not_null
+
+      - name: medium
+        description: "First-user medium. '(not set)' when missing."
+        data_tests:
+          - not_null
+
+      - name: sessions
+        description: "Number of sessions."
+        data_tests:
+          - not_null
+
+      - name: revenue
+        description: "Item revenue from purchases in these sessions."
+        data_tests:
+          - not_null        
