@@ -15,6 +15,7 @@ LEFT JOIN {{ ref('dim_products') }} AS p
     ON i.item_id = p.item_id
 
 WHERE i.item_id IS NOT NULL
+AND i.item_id != '(not set)'
 
 GROUP BY
     i.item_id,

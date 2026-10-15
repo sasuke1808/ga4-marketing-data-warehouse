@@ -184,4 +184,24 @@ models:
       - name: revenue
         description: "Item revenue from purchases in these sessions."
         data_tests:
+          - not_null
+
+  
+  - name: mart_top_products
+    description: "Product performance. One row per product with units sold, revenue and purchase sessions."
+    columns:
+      - name: item_id
+        description: "Unique product identifier."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: units_sold
+        description: "Total quantity sold."
+        data_tests:
+          - not_null
+
+      - name: revenue
+        description: "Total item revenue for the product."
+        data_tests:
           - not_null        
